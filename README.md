@@ -41,7 +41,7 @@ public class User {
 
     @Meta(el = "@deptService.getById(#root.deptId)?.deptName")
     @TableField(fill = FieldFill.INSERT)
-    private Long deptName;
+    private String deptName;
 
     @Meta(el = "#authentication?.userId")
     @TableField(fill = FieldFill.INSERT)
