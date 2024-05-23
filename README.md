@@ -39,6 +39,10 @@ public class User {
     @TableField(fill = FieldFill.INSERT)
     private Long deptId;
 
+    @Meta(el = "@deptService.getById(#root.deptId)?.deptName")
+    @TableField(fill = FieldFill.INSERT)
+    private Long deptName;
+
     @Meta(el = "#authentication?.userId")
     @TableField(fill = FieldFill.INSERT)
     private Long createBy;
@@ -49,5 +53,5 @@ public class User {
 }
 
   --------------------
-  insert sql = INSERT INTO sys_user ( user_id, name, dept_id, create_by, create_by_name ) VALUES (1, null, 123, 1, '张三')
+  insert sql = INSERT INTO sys_user ( user_id, name, dept_id, dept_name, create_by, create_by_name ) VALUES (1, null, 123, '测试', 1, '张三')
 </pre>
